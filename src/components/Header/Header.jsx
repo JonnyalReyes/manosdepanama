@@ -52,6 +52,19 @@ const MobileNavigation = Navigation.filter((item) =>
 
 const Header = () => {
   const { isOpen, menuHandler, offCanvasHandler } = useHeader();
+  const [showMegamenu, setShowMegamenu] = useState(true);
+
+  useEffect(() => {
+    if (!isOpen) {
+      const timeout = setTimeout(() => {
+        setShowMegamenu(false);
+      }, 2000);
+
+      return () => clearTimeout(timeout);
+    } else {
+      setShowMegamenu(true);
+    }
+  }, [isOpen]);
 
   return (
     <>
@@ -109,7 +122,7 @@ const Header = () => {
           </div>
         </div>
       </header>
-      <MegaMenu />
+      {showMegamenu && <MegaMenu />}
       <OffCanvas />
     </>
   );

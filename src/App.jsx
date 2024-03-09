@@ -12,9 +12,9 @@ function App() {
     <DatabaseProvider>
       <HeaderProvider>
         <Header />
-        <Hero />
-        <CallToAction />
       </HeaderProvider>
+      <Hero />
+      <CallToAction />
       <Footer />
     </DatabaseProvider>
   );

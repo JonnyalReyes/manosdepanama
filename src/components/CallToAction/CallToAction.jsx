@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { twMerge } from "tailwind-merge";
 
 import { useDatabase } from "../../contexts/DatabaseContext";
 
 import CTABanner from "../../assets/cta-banner.webp";
-import ReturnPolicy from "../../assets/90-days-return.avif";
-import FreeDelivery from "../../assets/free-delivery.avif";
-import Warranty from "../../assets/Warranty.avif";
+
 import ProductCard from "../Utilities/ProductCard";
+import StoreBenefits from "../Utilities/StoreBenefits";
 
 const CallToAction = () => {
   const { data } = useDatabase();
@@ -17,27 +15,6 @@ const CallToAction = () => {
     const filteredItems = data.filter((item) => item.rating.rate >= 4);
     setFavouriteItems(filteredItems);
   }, [data]);
-
-  const CTAActions = [
-    {
-      id: 1,
-      title: "No Cost EMI Available",
-      image: Warranty,
-      className: "justify-center",
-    },
-    {
-      id: 2,
-      title: "Easy Returns",
-      image: ReturnPolicy,
-      className: "justify-center",
-    },
-    {
-      id: 3,
-      title: "1 M+ happy Customers",
-      image: FreeDelivery,
-      className: "justify-center",
-    },
-  ];
 
   return (
     <>
@@ -70,20 +47,7 @@ const CallToAction = () => {
         style={{ backgroundImage: `url(${CTABanner})` }}
       >
         <div className="container mx-auto">
-          <div className="grid grid-cols-1 gap-4 divide-x-0 divide-slate-500 md:grid-cols-3 md:gap-0 md:divide-x-[2px]">
-            {CTAActions.map((item, index) => (
-              <div
-                key={index}
-                className={twMerge(`flex items-center gap-2`, item.className)}
-              >
-                <img className="w-6" src={item.image} alt={item.title} />
-                <p className="font-normal">{item.title}</p>
-                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-gray-50 p-4">
-                  →
-                </span>
-              </div>
-            ))}
-          </div>
+          <StoreBenefits isBorder={true} />
         </div>
       </div>
     </>

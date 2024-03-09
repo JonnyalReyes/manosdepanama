@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import { DatabaseProvider } from "./contexts/DatabaseContext.jsx";
 import { HeaderProvider } from "./contexts/HeaderContext.jsx";
 import Hero from "./components/Hero/Hero.jsx";
+import CallToAction from "./components/CallToAction/CallToAction.jsx";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <HeaderProvider>
         <Header />
         <Hero />
+        <CallToAction />
       </HeaderProvider>
     </DatabaseProvider>
   );

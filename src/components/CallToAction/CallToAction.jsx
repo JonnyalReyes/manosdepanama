@@ -77,7 +77,7 @@ const CallToAction = () => {
                 className={twMerge(`flex items-center gap-2`, item.className)}
               >
                 <img className="w-6" src={item.image} alt={item.title} />
-                <p className="font-semibold">{item.title}</p>
+                <p className="font-normal">{item.title}</p>
                 <span className="flex h-4 w-4 items-center justify-center rounded-full bg-gray-50 p-4">
                   →
                 </span>

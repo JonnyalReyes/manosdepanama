@@ -5,15 +5,17 @@ import { DatabaseProvider } from "./contexts/DatabaseContext.jsx";
 import { HeaderProvider } from "./contexts/HeaderContext.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import CallToAction from "./components/CallToAction/CallToAction.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 function App() {
   return (
     <DatabaseProvider>
       <HeaderProvider>
         <Header />
-        <Hero />
-        <CallToAction />
       </HeaderProvider>
+      <Hero />
+      <CallToAction />
+      <Footer />
     </DatabaseProvider>
   );
 }

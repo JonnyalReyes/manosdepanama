@@ -12,7 +12,7 @@ const CallToAction = () => {
   const [favouriteItems, setFavouriteItems] = useState([]);
 
   useEffect(() => {
-    const filteredItems = data.filter((item) => item.rating.rate >= 4);
+    const filteredItems = data.filter((item) => item.rating.rate >= 3);
     setFavouriteItems(filteredItems);
   }, [data]);
 
@@ -28,18 +28,17 @@ const CallToAction = () => {
               Favourite Products This Season
             </h2>
           </div>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-7">
-            {favouriteItems.map((product, index) => {
-              return (
-                <div
-                  className="-z-20 flex flex-col justify-between gap-5 border border-gray-300 p-4"
-                  key={index}
-                >
-                  <ProductCard index={index} product={product} />
-                </div>
-              );
-            })}
-          </div>
+          <section>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+              {favouriteItems.map((product, index) => {
+                return (
+                  <React.Fragment key={index}>
+                    <ProductCard index={index} product={product} />
+                  </React.Fragment>
+                );
+              })}
+            </div>
+          </section>
         </div>
       </section>
       <div

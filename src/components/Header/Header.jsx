@@ -12,45 +12,45 @@ import MegaMenu from "./MegaMenu";
 import HamburgerButton from "./HamburgerButton";
 import { useHeader } from "../../contexts/HeaderContext";
 import OffCanvas from "./OffCanvas";
-
-const Navigation = [
-  {
-    id: 1,
-    menu: "Sign In",
-    icon: <FaRegUser />,
-    url: "/sign-in",
-  },
-  {
-    id: 2,
-    menu: "My Store",
-    icon: <FaRegFloppyDisk />,
-    url: "/my-store",
-  },
-  {
-    id: 3,
-    menu: "Support",
-    icon: <FaRegMessage />,
-    url: "/support",
-  },
-  {
-    id: 4,
-    menu: "Wishlist",
-    icon: <FaRegHeart />,
-    url: "/wishlist",
-  },
-  {
-    id: 5,
-    menu: "cart",
-    icon: <MdOutlineShoppingCart />,
-    url: "/cart",
-  },
-];
-
-const MobileNavigation = Navigation.filter((item) =>
-  ["Wishlist", "cart"].includes(item.menu),
-);
+import SlideInCart from "../SlideInCart/SlideInCart";
+import { useCart } from "../../contexts/CartContext";
 
 const Header = () => {
+  const { itemsInCart, calculateQuantity, slideInCart, setSlideInCart } =
+    useCart();
+
+  const TotalQuantity = calculateQuantity(itemsInCart);
+  const Navigation = [
+    {
+      id: 1,
+      menu: "Sign In",
+      icon: <FaRegUser />,
+      url: "/sign-in",
+    },
+    {
+      id: 2,
+      menu: "My Store",
+      icon: <FaRegFloppyDisk />,
+      url: "/my-store",
+    },
+    {
+      id: 3,
+      menu: "Support",
+      icon: <FaRegMessage />,
+      url: "/support",
+    },
+    {
+      id: 4,
+      menu: "Wishlist",
+      icon: <FaRegHeart />,
+      url: "/wishlist",
+    },
+  ];
+
+  const MobileNavigation = Navigation.filter((item) =>
+    ["Wishlist"].includes(item.menu),
+  );
+
   const { isOpen, menuHandler, offCanvasHandler } = useHeader();
   const [showMegamenu, setShowMegamenu] = useState(true);
 
@@ -68,13 +68,18 @@ const Header = () => {
 
   return (
     <>
-      <header>
+      <header className="relative">
+        <SlideInCart
+          className={slideInCart ? "translate-x-0" : ""}
+          setSlideInCart={setSlideInCart}
+          slideInCart={slideInCart}
+        />
         <div className="bg-primary px-4 py-3 xl:py-4 2xl:px-16">
           <div className="container mx-auto">
             <div className="hidden items-center justify-between md:flex">
               <div className="flex">
                 <HamburgerButton desktop={true} handler={menuHandler} />
-                <a href="#" className="ml-3 cursor-default md:ml-6 lg:ml-12">
+                <a href="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
                   <img
                     className="cursor-pointer border border-white lg:w-36"
                     src={BrandLogo}
@@ -89,7 +94,14 @@ const Header = () => {
                 </div>
               </div>
               <div className="lg:pr-0 xl:pl-14 xl:pr-6 2xl:pr-4">
-                <MainMenu MenuArray={Navigation} label={true} />
+                <MainMenu
+                  MenuArray={Navigation}
+                  label={true}
+                  slideInCart={slideInCart}
+                  setSlideInCart={setSlideInCart}
+                  itemsInCart={itemsInCart}
+                  TotalQuantity={TotalQuantity}
+                />
               </div>
             </div>
             {/* Mobile Header */}
@@ -115,7 +127,13 @@ const Header = () => {
               <div className="flex items-center">
                 <SearchField />
                 <div className="pl-4">
-                  <MainMenu MenuArray={MobileNavigation} label={false} />
+                  <MainMenu
+                    MenuArray={MobileNavigation}
+                    label={false}
+                    slideInCart={slideInCart}
+                    setSlideInCart={setSlideInCart}
+                    TotalQuantity={TotalQuantity}
+                  />
                 </div>
               </div>
             </div>
@@ -170,15 +188,37 @@ const SearchField = () => (
   </div>
 );
 
-const MainMenu = ({ MenuArray, label }) => (
-  <ul className="flex gap-x-5 text-white">
-    {MenuArray.map((items) => (
-      <li key={items.id}>
-        <a href={items.url} className="flex flex-col items-center gap-1">
-          {items.icon}
-          {label && <span className="text-sm">{items.menu}</span>}
-        </a>
+const MainMenu = ({
+  MenuArray,
+  label,
+  slideInCart,
+  setSlideInCart,
+  TotalQuantity,
+}) => {
+  return (
+    <ul className="flex gap-x-5 text-white">
+      {MenuArray.map((items) => (
+        <li key={items.id}>
+          <button href={items.url} className="flex flex-col items-center gap-1">
+            {items.icon}
+            {label && <span className="text-sm">{items.menu}</span>}
+          </button>
+        </li>
+      ))}
+      <li>
+        <button
+          onClick={() => {
+            setSlideInCart(!slideInCart);
+          }}
+          className="relative flex flex-col items-center gap-1"
+        >
+          <MdOutlineShoppingCart />
+          {label && <span className="text-sm">cart</span>}
+          <span className="absolute right-0 top-0 block h-1 w-1 rounded-full bg-yellow-500 p-[3px] text-xs">
+            {TotalQuantity}
+          </span>
+        </button>
       </li>
-    ))}
-  </ul>
-);
+    </ul>
+  );
+};

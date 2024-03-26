@@ -12,7 +12,6 @@ const Categories = () => {
     return data.find((item) => item.category === category)?.image;
   };
 
-  console.log();
   return (
     <section className="container mx-auto">
       <div className="grid grid-cols-4 py-10">

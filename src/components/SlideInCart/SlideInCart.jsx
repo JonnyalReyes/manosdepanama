@@ -89,7 +89,6 @@ const CartWithItem = ({ itemsInCart, calculateTotal, calculateQuantity }) => {
       </div>
       <div className="flex h-full flex-col justify-between">
         <div className="p-5">
-          {console.log(itemsInCart)}
           {itemsInCart.map((item) => {
             const total = item.quantity * item.price;
             return (

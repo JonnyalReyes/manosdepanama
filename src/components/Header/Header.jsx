@@ -214,9 +214,9 @@ const MainMenu = ({
         >
           <MdOutlineShoppingCart />
           {label && <span className="text-sm">cart</span>}
-          <span className="absolute right-0 top-0 block h-1 w-1 rounded-full bg-yellow-500 p-[3px] text-xs">
+          <div className="absolute bottom-8 left-3 flex h-[15px] w-[15px] items-center justify-center rounded-full bg-yellow-800 text-[8px]">
             {TotalQuantity}
-          </span>
+          </div>
         </button>
       </li>
     </ul>

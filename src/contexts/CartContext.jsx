@@ -66,6 +66,20 @@ export const CartProvider = ({ children }) => {
     });
     return quantity;
   };
+
+  useEffect(() => {
+    const retrievedProducts = JSON.parse(localStorage.getItem("products"));
+    if (retrievedProducts) {
+      setItemsInCart(retrievedProducts);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (itemsInCart.length > 0) {
+      localStorage.setItem("products", JSON.stringify(itemsInCart));
+    }
+  }, [itemsInCart]);
+
   return (
     <CartContext.Provider
       value={{

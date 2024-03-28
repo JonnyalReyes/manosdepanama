@@ -1,9 +1,11 @@
 import React from "react";
 import { useCart } from "../../contexts/CartContext";
 import { twMerge } from "tailwind-merge";
+import { MdDelete } from "react-icons/md";
 
 const SlideInCart = ({ setSlideInCart, slideInCart, className }) => {
-  const { itemsInCart, calculateTotal, calculateQuantity } = useCart();
+  const { itemsInCart, calculateTotal, calculateQuantity, removeItemHandler } =
+    useCart();
 
   return (
     <div
@@ -34,6 +36,14 @@ const SlideInCart = ({ setSlideInCart, slideInCart, className }) => {
         </svg>
         <span className="sr-only">Close menu</span>
       </button>
+      {itemsInCart.length > 0 && (
+        <button
+          onClick={removeItemHandler}
+          className="absolute left-3 top-4 z-[70]"
+        >
+          <MdDelete size={24} className="shake" />
+        </button>
+      )}
       {itemsInCart.length === 0 ? (
         <EmptyCart />
       ) : (
@@ -90,22 +100,27 @@ const CartWithItem = ({ itemsInCart, calculateTotal, calculateQuantity }) => {
       <div className="flex h-full flex-col justify-between">
         <div className="p-5">
           {itemsInCart.map((item) => {
-            const total = item.quantity * item.price;
             return (
-              <div key={item.id} className="my-3 flex gap-3 border-b pb-3.5">
-                <div className="w-2/12">
-                  <img className="w-10" src={item.image} alt={item.title} />
-                </div>
-                <div className="w-10/12">
-                  <h3 className="block text-sm">{item.title}</h3>
-                  <div className="mt-3 flex justify-between">
-                    <span>
-                      <b>Quantity:</b> {item.quantity}
-                    </span>
-                    <span className="block">$ {item.price}</span>
+              <React.Fragment key={item.id}>
+                {itemsInCart.length > 0 ? (
+                  <div className="my-3 flex gap-3 border-b pb-3.5">
+                    <div className="w-2/12">
+                      <img className="w-10" src={item.image} alt={item.title} />
+                    </div>
+                    <div className="w-10/12">
+                      <h3 className="block text-sm">{item.title}</h3>
+                      <div className="mt-3 flex justify-between">
+                        <span>
+                          <b>Quantity:</b> {item.quantity}
+                        </span>
+                        <span className="block">$ {item.price}</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
+                ) : (
+                  "Item removed successfully!"
+                )}
+              </React.Fragment>
             );
           })}
         </div>

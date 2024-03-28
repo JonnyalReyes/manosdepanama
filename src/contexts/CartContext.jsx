@@ -80,6 +80,11 @@ export const CartProvider = ({ children }) => {
     }
   }, [itemsInCart]);
 
+  const removeItemHandler = () => {
+    localStorage.removeItem("products");
+    setItemsInCart([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -89,6 +94,7 @@ export const CartProvider = ({ children }) => {
         calculateQuantity,
         slideInCart,
         setSlideInCart,
+        removeItemHandler,
       }}
     >
       {children}

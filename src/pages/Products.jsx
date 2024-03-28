@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import ShopSort from "./components/ShopFilter/ShopSort";
-import SingleCategoryFilter from "./components/ShopFilter/SingleCategoryFilter";
-import ProductCard from "./components/Utilities/ProductCard";
-import Loading from "./components/Utilities/Loading";
-import { useDatabase } from "./contexts/DatabaseContext";
+import ShopSort from "../components/ShopFilter/ShopSort";
+import SingleCategoryFilter from "../components/ShopFilter/SingleCategoryFilter";
+import ProductCard from "../components/Utilities/ProductCard";
+import Loading from "../components/Utilities/Loading";
+import Layout from "../Layout";
+import { useDatabase } from "../contexts/DatabaseContext";
 
 const Products = () => {
   const { data } = useDatabase();
@@ -62,33 +63,35 @@ const Products = () => {
 
   if (data.length) {
     return (
-      <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-        <h1>Shop Page</h1>
-        <ShopSort sortHandler={sortHandler} />
+      <Layout>
+        <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
+          <h1>Shop Page</h1>
+          <ShopSort sortHandler={sortHandler} />
 
-        <div className="flex flex-wrap">
-          <aside className="w-full xl:w-3/12">
-            <div className="mr-10 rounded border bg-slate-100 p-10">
-              <SingleCategoryFilter
-                uniqueCat={uniqueCat}
-                categorySortingHandler={categorySortingHandler}
-                selectedCategory={selectedCategory}
-              />
-            </div>
-          </aside>
-          <div className="w-full xl:w-9/12">
-            <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 xl:grid-cols-4">
-              {filteredData.length > 0 ? (
-                filteredData.map((item, index) => (
-                  <ProductCard key={index} product={item} />
-                ))
-              ) : (
-                <Loading />
-              )}
+          <div className="flex flex-wrap">
+            <aside className="w-full xl:w-3/12">
+              <div className="mr-10 rounded border bg-slate-100 p-10">
+                <SingleCategoryFilter
+                  uniqueCat={uniqueCat}
+                  categorySortingHandler={categorySortingHandler}
+                  selectedCategory={selectedCategory}
+                />
+              </div>
+            </aside>
+            <div className="w-full xl:w-9/12">
+              <div className="grid grid-cols-2 gap-6 lg:grid-cols-3 xl:grid-cols-4">
+                {filteredData.length > 0 ? (
+                  filteredData.map((item, index) => (
+                    <ProductCard key={index} product={item} />
+                  ))
+                ) : (
+                  <Loading />
+                )}
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </Layout>
     );
   } else {
     return <Loading />;

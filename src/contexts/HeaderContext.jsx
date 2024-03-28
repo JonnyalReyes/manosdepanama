@@ -31,6 +31,8 @@ export const HeaderProvider = ({ children }) => {
     <HeaderContext.Provider
       value={{
         isOpen,
+        setIsOpen,
+        setOffCanvasOpen,
         menuHandler,
         isOffCanvasOpen,
         offCanvasHandler,

@@ -10,7 +10,7 @@ const Notice = () => {
   return (
     <React.Fragment>
       {isNotice && (
-        <div className="relative -z-20 bg-sky-100 p-3 text-center">
+        <div className="relative bg-sky-100 p-3 text-center">
           <span className="text-sm">
             Enjoy <b>₹200/- Off</b> on your first purchase.T&C apply
           </span>

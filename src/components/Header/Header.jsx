@@ -1,23 +1,25 @@
 import { useState, useEffect } from "react";
-import Typewriter from "typewriter-effect";
-
+import { Link } from "react-router-dom";
 import { FaRegUser, FaRegHeart } from "react-icons/fa";
 import { FaRegMessage, FaRegFloppyDisk } from "react-icons/fa6";
-import { MdOutlineShoppingCart } from "react-icons/md";
-import { IoIosSearch } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 import "./Header.css";
 import BrandLogo from "../../assets/logo.svg";
 import MegaMenu from "./MegaMenu";
 import HamburgerButton from "./HamburgerButton";
-import { useHeader } from "../../contexts/HeaderContext";
+import SearchField from "./SearchField";
+import MainMenu from "./MainMenu";
 import OffCanvas from "./OffCanvas";
 import SlideInCart from "../SlideInCart/SlideInCart";
+
+import { useHeader } from "../../contexts/HeaderContext";
 import { useCart } from "../../contexts/CartContext";
 
 const Header = () => {
   const { itemsInCart, calculateQuantity, slideInCart, setSlideInCart } =
     useCart();
+  const navigate = useNavigate();
 
   const TotalQuantity = calculateQuantity(itemsInCart);
   const Navigation = [
@@ -31,7 +33,7 @@ const Header = () => {
       id: 2,
       menu: "My Store",
       icon: <FaRegFloppyDisk />,
-      url: "/my-store",
+      url: "/products",
     },
     {
       id: 3,
@@ -51,20 +53,26 @@ const Header = () => {
     ["Wishlist"].includes(item.menu),
   );
 
-  const { isOpen, menuHandler, offCanvasHandler } = useHeader();
+  const { isOpen, setIsOpen, menuHandler, offCanvasHandler } = useHeader();
   const [showMegamenu, setShowMegamenu] = useState(true);
 
   useEffect(() => {
     if (!isOpen) {
       const timeout = setTimeout(() => {
         setShowMegamenu(false);
-      }, 2000);
+      }, 1000);
 
       return () => clearTimeout(timeout);
     } else {
       setShowMegamenu(true);
     }
   }, [isOpen]);
+
+  const openProduct = (id) => {
+    navigate(`/products/${id}`);
+    setShowMegamenu((showMegamenu) => !showMegamenu);
+    setIsOpen((isOpen) => !isOpen);
+  };
 
   return (
     <>
@@ -76,21 +84,20 @@ const Header = () => {
         />
         <div className="bg-primary px-4 py-3 xl:py-4 2xl:px-16">
           <div className="container mx-auto">
-            <div className="hidden items-center justify-between md:flex">
-              <div className="flex">
+            <div className="hidden flex-col items-center justify-between gap-6 md:flex lg:flex-row">
+              <div className="flex w-full justify-between lg:w-auto lg:justify-normal">
                 <HamburgerButton desktop={true} handler={menuHandler} />
-                <a href="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
+                <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
                   <img
                     className="cursor-pointer border border-white lg:w-36"
                     src={BrandLogo}
                     alt="Dekaathlon"
                   />
-                </a>
+                </Link>
               </div>
-              <div className="flex flex-grow items-center lg:pr-0 xl:pl-14 xl:pr-6 2xl:pr-4">
-                <div className="flex w-full items-center gap-10">
+              <div className="flex w-full flex-grow items-center lg:w-auto">
+                <div className="flex w-full items-center gap-10 pl-0 pr-0 lg:pl-6 lg:pr-6 ">
                   <SearchField />
-                  <DeliveryLocation />
                 </div>
               </div>
               <div className="lg:pr-0 xl:pl-14 xl:pr-6 2xl:pr-4">
@@ -109,19 +116,21 @@ const Header = () => {
               <div className="mb-5 flex justify-between">
                 <div className="flex items-center">
                   <HamburgerButton handler={offCanvasHandler} />
-                  <a href="#" className="ml-3 cursor-default md:ml-6 lg:ml-12">
+                  <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
                     <img
                       src={BrandLogo}
                       className="w-28 cursor-pointer border border-white"
                       alt="Dekaathlon"
                     />
-                  </a>
+                  </Link>
                 </div>
                 <div className="flex items-center gap-3 ">
-                  <button className="h-7 w-16 rounded-md border border-white text-xs uppercase text-white">
+                  <a
+                    href="/sign-in"
+                    className="flex h-7 w-16 items-center justify-center rounded-md border border-white text-xs uppercase text-white"
+                  >
                     Sign In
-                  </button>
-                  <DeliveryLocation />
+                  </a>
                 </div>
               </div>
               <div className="flex items-center">
@@ -140,85 +149,10 @@ const Header = () => {
           </div>
         </div>
       </header>
-      {showMegamenu && <MegaMenu />}
+      {showMegamenu && <MegaMenu openProduct={openProduct} />}
       <OffCanvas />
     </>
   );
 };
 
 export default Header;
-
-const DeliveryLocation = () => (
-  <div>
-    <p className="text-xs text-white md:text-sm">Delivery Location</p>
-    <div>
-      <span className="text-xs font-bold text-yellow-400 md:text-sm">
-        12345
-      </span>
-      <button className="ml-1 text-xs uppercase text-white underline md:text-sm">
-        change
-      </button>
-    </div>
-  </div>
-);
-
-const SearchField = () => (
-  <div className="flex flex-1 cursor-pointer items-center gap-3 rounded-lg bg-white p-2">
-    <div className="h-full w-full   outline-none">
-      <div className="flex font-extrabold text-gray-400">
-        <span className="mr-1 font-normal">Search for</span>
-        <Typewriter
-          options={{
-            strings: [
-              '"Surfing Shorts"',
-              '"Carrom Boards"',
-              '"Table Tennis"',
-              '"Skating"',
-              '"Basketball"',
-              '"Jackets"',
-            ],
-            autoStart: true,
-            loop: true,
-            speed: 53,
-          }}
-        />
-      </div>
-    </div>
-    <IoIosSearch />
-  </div>
-);
-
-const MainMenu = ({
-  MenuArray,
-  label,
-  slideInCart,
-  setSlideInCart,
-  TotalQuantity,
-}) => {
-  return (
-    <ul className="flex gap-x-5 text-white">
-      {MenuArray.map((items) => (
-        <li key={items.id}>
-          <button href={items.url} className="flex flex-col items-center gap-1">
-            {items.icon}
-            {label && <span className="text-sm">{items.menu}</span>}
-          </button>
-        </li>
-      ))}
-      <li>
-        <button
-          onClick={() => {
-            setSlideInCart(!slideInCart);
-          }}
-          className="relative flex flex-col items-center gap-1"
-        >
-          <MdOutlineShoppingCart />
-          {label && <span className="text-sm">cart</span>}
-          <div className="absolute bottom-8 left-3 flex h-[15px] w-[15px] items-center justify-center rounded-full bg-yellow-800 text-[8px]">
-            {TotalQuantity}
-          </div>
-        </button>
-      </li>
-    </ul>
-  );
-};

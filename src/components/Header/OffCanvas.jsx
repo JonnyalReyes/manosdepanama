@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
 import { useHeader } from "../../contexts/HeaderContext";
 import { useDatabase } from "../../contexts/DatabaseContext";
 
 const OffCanvas = () => {
-  const { isOffCanvasOpen, allCategories, offCanvasHandler } = useHeader();
+  const { isOffCanvasOpen, setOffCanvasOpen, allCategories, offCanvasHandler } =
+    useHeader();
   const { data } = useDatabase();
   const [activeCategory, setActiveCategory] = useState(null);
+  const navigate = useNavigate();
 
   const toggleSubmenu = (category) => {
     setActiveCategory(category === activeCategory ? null : category);
@@ -14,6 +17,11 @@ const OffCanvas = () => {
 
   const toggleMainmenu = () => {
     setActiveCategory(null);
+  };
+
+  const openProduct = (id) => {
+    navigate(`/products/${id}`);
+    setOffCanvasOpen((isOffCanvasOpen) => !isOffCanvasOpen);
   };
 
   const renderSubmenu = (category) => {
@@ -33,6 +41,7 @@ const OffCanvas = () => {
             .filter((item) => item.category === category)
             .map((item) => (
               <li
+                onClick={() => openProduct(item.id)}
                 key={item.id}
                 className="my-2 flex cursor-pointer gap-3 rounded-sm bg-slate-100 px-4 py-6"
               >

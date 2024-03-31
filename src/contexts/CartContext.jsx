@@ -10,7 +10,7 @@ export const CartProvider = ({ children }) => {
   const [itemsInCart, setItemsInCart] = useState([]);
   const [slideInCart, setSlideInCart] = useState(false);
 
-  const addToCartHandler = (id, title, image, price) => {
+  const addToCartHandler = (id, title, image, price, quantity = 1) => {
     const itemIndex = itemsInCart.findIndex((item) => item.id === id);
 
     if (itemIndex !== -1) {
@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
         if (index === itemIndex) {
           return {
             ...item,
-            quantity: item.quantity + 1,
+            quantity: item.quantity + quantity,
           };
         }
         return item;
@@ -27,7 +27,7 @@ export const CartProvider = ({ children }) => {
     } else {
       setItemsInCart((prevItems) => [
         ...prevItems,
-        { id, title, image, price, quantity: 1 },
+        { id, title, image, price, quantity },
       ]);
     }
 

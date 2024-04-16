@@ -9,7 +9,7 @@ const ProductCard = ({ product, className }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   const openProduct = (id) => {
-    navigate(`/products/${id}`);
+    navigate(`/shop/${id}`);
   };
 
   if (product) {
@@ -63,6 +63,7 @@ const ProductCard = ({ product, className }) => {
                 addToCartHandler(
                   product.id,
                   product.title,
+                  product.category,
                   product.image,
                   product.price,
                 )

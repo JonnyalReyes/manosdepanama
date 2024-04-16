@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useCart } from "../../contexts/CartContext";
 import { twMerge } from "tailwind-merge";
 import { MdDelete } from "react-icons/md";
+import { useCheckout } from "../../contexts/CheckoutContext";
 
 const SlideInCart = ({ setSlideInCart, slideInCart, className }) => {
   const { itemsInCart, calculateTotal, calculateQuantity, removeItemHandler } =
     useCart();
+
+  const { retrieveUserData, userData } = useCheckout();
 
   return (
     <div
@@ -51,6 +54,8 @@ const SlideInCart = ({ setSlideInCart, slideInCart, className }) => {
           itemsInCart={itemsInCart}
           calculateTotal={calculateTotal}
           calculateQuantity={calculateQuantity}
+          setSlideInCart={setSlideInCart}
+          slideInCart={slideInCart}
         />
       )}
     </div>
@@ -84,12 +89,18 @@ const EmptyCart = () => {
         </g>
       </svg>
       <p className="text-base font-light text-slate-500">Your cart is empty.</p>
-      <a href="/products">SHOP NOW</a>
+      <a href="/shop">SHOP NOW</a>
     </div>
   );
 };
 
-const CartWithItem = ({ itemsInCart, calculateTotal, calculateQuantity }) => {
+const CartWithItem = ({
+  itemsInCart,
+  calculateTotal,
+  calculateQuantity,
+  setSlideInCart,
+  slideInCart,
+}) => {
   return (
     <>
       <div className="relative flex justify-center border-b py-4">
@@ -134,10 +145,13 @@ const CartWithItem = ({ itemsInCart, calculateTotal, calculateQuantity }) => {
             <p className="font-semibold">$ {calculateTotal(itemsInCart)}</p>
           </div>
           <div className="flex flex-col items-center justify-between">
-            <button className="my-5 w-full bg-black py-3 text-lg font-semibold text-white">
+            <a
+              href="/checkout"
+              className="my-5 w-full bg-black py-3 text-center text-lg font-semibold text-white"
+            >
               Checkout
-            </button>
-            <a href="/products" className="text-sm font-light text-slate-500">
+            </a>
+            <a href="/shop" className="text-sm font-light text-slate-500">
               or continue shopping
             </a>
           </div>

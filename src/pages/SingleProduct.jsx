@@ -181,7 +181,14 @@ const SingleProduct = () => {
                   <button
                     className="flex items-center justify-center gap-3 rounded bg-sky-500 px-8 py-3 text-white transition duration-300 hover:bg-sky-600"
                     onClick={() => {
-                      addToCartHandler(id, title, image, price, quantity);
+                      addToCartHandler(
+                        id,
+                        title,
+                        category,
+                        image,
+                        price,
+                        quantity,
+                      );
                     }}
                   >
                     <BsCart2 />

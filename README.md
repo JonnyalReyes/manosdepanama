@@ -9,6 +9,8 @@ This project is a clone of an e-commerce website https://www.decathlon.in/ creat
 - [x] Slide-in checkout section
 - [x] Mega menu
 - [x] Full e-commerce feature from adding product to cart to checkout
+- [x] Add filter options to filter products based on categories.
+- [x] Add sort options to sort products based on ratings and price.
 - [x] Calling data from REST API
 - [x] Styled using Tailwind CSS with [tailwind-merge](https://www.npmjs.com/package/tailwind-merge)
 - [x] React hooks such as Context API, useEffect, useState and more

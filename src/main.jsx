@@ -18,7 +18,7 @@ import { CartProvider } from "./contexts/CartContext.jsx";
 import { CheckoutProvider } from "./contexts/CheckoutContext.jsx";
 
 const routes = createBrowserRouter([
-  {
+  { 
     path: "/",
     element: <Homepage />,
     errorElement: <NotFoundPage />,

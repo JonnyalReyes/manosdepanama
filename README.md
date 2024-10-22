@@ -26,7 +26,7 @@ This project is a clone of an e-commerce website https://www.decathlon.in/ creat
 To run this project locally, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/NaveenKharwar/dekaathlon.git`
-2. Navigate to the project directory: `cd dekaathlon`
+2. Navigate to the project directory: `cd manosdepanama`
 3. Install dependencies: `npm install`
 4. Start the development server: `npm run dev`
 

@@ -3,8 +3,8 @@ import { FaShoppingCart } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 function CartEmpty({
-  heading = "Your cart is empty",
-  subHeading = "Looks like you haven't added any items to your cart yet.",
+  heading = "Tu cesta esta vacia...",
+  subHeading = "Parece que aún no has añadido ningún artículo a tu cesta.",
   icon = <FaShoppingCart className="mx-auto h-12 w-12 text-gray-400" />,
   linkTo,
 }) {

@@ -99,7 +99,7 @@ Configura las variables de entorno necesarias para la conexión a la base de dat
 
 **DEMO**
 
-[https://manosdepanama.vercel.app](url)
+https://manosdepanama.vercel.app
 
 
 

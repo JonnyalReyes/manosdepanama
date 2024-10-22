@@ -54,9 +54,11 @@ Tecnologías Utilizadas
 Frontend:
 
 ● React.js para el desarrollo de la interfaz de usuario interactiva y responsiva.
+
 ● Tailwind CSS para estilos personalizados.
 
 Backend:
 
 ● Node.js con Express para la gestión del servidor y las rutas API.
+
 ● JWT (JSON Web Tokens) para la autenticación segura de los usuarios.

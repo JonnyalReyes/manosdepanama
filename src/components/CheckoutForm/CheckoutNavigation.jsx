@@ -14,7 +14,7 @@ const CheckoutNavigation = () => {
           className="flex cursor-pointer items-center"
           onClick={() => setSlideInCart(true)}
         >
-          Cart
+          Cesta
         </li>
         <IoIosArrowForward className="mx-4 text-slate-300" />
         <li className="flex cursor-pointer items-center">
@@ -22,7 +22,7 @@ const CheckoutNavigation = () => {
             to={"/checkout"}
             className={({ isActive }) => (isActive ? "text-sky-500" : "")}
           >
-            Checkout
+            Pedido
           </NavLink>
         </li>
         <IoIosArrowForward className="mx-4 text-slate-300" />
@@ -31,7 +31,7 @@ const CheckoutNavigation = () => {
             to={"/confirmation"}
             className={({ isActive }) => isActive && "text-sky-500"}
           >
-            Confirmation
+            Confirmación
           </NavLink>
         </li>
       </ol>

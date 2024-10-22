@@ -4,11 +4,11 @@
     "name": "SOPORTE",
     "subNames": [
       {
-        "name": "Contactanos",
+        "name": "",
         "url": "#"
       },
       {
-        "name": "Delivery",
+        "name": "",
         "url": "#"
       }
     ]
@@ -18,52 +18,52 @@
     "name": "NUESTROS SERVICIOS",
     "subNames": [
       {
-        "name": "Decathlon for Schools",
+        "name": "",
         "url": "#"
       },
       {
-        "name": "Decathlon for Corporates",
+        "name": "",
         "url": "#"
       },
       {
-        "name": "Decathlon for Sport Clubs",
+        "name": "",
         "url": "#"
       },
       {
-        "name": "Decathlon Gift Cards",
+        "name": "",
         "url": "#"
       },
       {
-        "name": "Installation & Assembly Services",
+        "name": "",
         "url": "#"
       }
     ]
   },
   {
     "id": 3,
-    "name": "ABOUT US",
+    "name": "Sobre nosotros",
     "subNames": [
       {
-        "name": "Quienes Somos",
-        "url": "#"
+        "name": "",
+        "url": ""
       }
 
     ]
   },
   {
     "id": 4,
-    "name": "LEGAL",
+    "name": "",
     "subNames": [
       {
-        "name": "Politica de devoluciones",
+        "name": "",
         "url": "#"
       },
       {
-        "name": "Terminos y conficiones",
+        "name": "",
         "url": "#"
       },
       {
-        "name": "Politica de Privacidad",
+        "name": "",
         "url": "#"
       }
     ]

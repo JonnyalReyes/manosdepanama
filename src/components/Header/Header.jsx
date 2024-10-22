@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { HiOutlineUserGroup } from "react-icons/hi";
 import "./Header.css";
 import BrandLogo from "../../assets/logo.svg";
+import ManosPan from "../../assets/Manos_de_Panama.svg";
 import { Loggin } from '../Loggin/Loggin';
 import MegaMenu from "./MegaMenu";
 import HamburgerButton from "./HamburgerButton";
@@ -92,9 +93,9 @@ const Header = () => {
                 <HamburgerButton desktop={true} handler={menuHandler} />
                 <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
                   <img
-                    className="cursor-pointer border border-white lg:w-36"
-                    src={BrandLogo}
-                    alt="Dekaathlon"
+                    className="cursor-pointer border border-white lg:w-24"
+                    src={ManosPan}
+                    alt="Manos de Panamá"
                   />
                 </Link>
               </div>

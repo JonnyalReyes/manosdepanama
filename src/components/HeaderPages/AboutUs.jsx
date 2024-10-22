@@ -1,24 +1,28 @@
 import React from 'react';
 import Layout from "../../Layout";
 
+import jonathanImage from "../../assets/Jonathan.webp";
+import joseImage from "../../assets/Jose.webp";
+import gabrielImage from "../../assets/Gabriel.webp";
+
 const developers = [
   {
     name: "Jonathan Reyes",
     role: "Frontend Developer",
     bio: "Apasionado por crear experiencias de usuario intuitivas y atractivas. Especializado en React y diseño responsivo.",
-    image: "/placeholder.svg?height=300&width=300"
+    image: jonathanImage
   },
   {
     name: "José Rodriguéz",
     role: "Backend Developer",
     bio: "Experto en arquitectura de sistemas y bases de datos. Enfocado en crear APIs robustas y escalables.",
-    image: "/placeholder.svg?height=300&width=300"
+    image: joseImage
   },
   {
     name: "Gabriel Ruiz",
     role: "Full Stack Developer",
     bio: "Desarrollador versátil con habilidades tanto en frontend como en backend. Apasionado por las nuevas tecnologías y la innovación.",
-    image: "/placeholder.svg?height=300&width=300"
+    image: gabrielImage
   }
 ];
 

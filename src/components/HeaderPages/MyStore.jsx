@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { PlusCircle, Edit, Trash2 } from 'lucide-react'
 import Layout from "../../Layout";
 
+import SombreroPintao from "../../assets/sombrero-pintao.webp";
+import MolaGuna from "../../assets/Mola-guna.webp";
+
 const initialProducts = [
-  { id: 1, name: 'Sombrero Pintado', description: 'Sombrero tradicional panameño', image: '/../../assets/sombrero.png?height=100&width=100', price: 45, quantity: 10 },
-  { id: 2, name: 'Mola Guna', description: 'Textil artesanal Guna', image: '/../../assets/Mola.png?height=100&width=100', price: 30, quantity: 15 },
+  { id: 1, name: 'Sombrero Pintado', description: 'Sombrero tradicional panameño', image: SombreroPintao, price: 45, quantity: 10 },
+  { id: 2, name: 'Mola Guna', description: 'Textil artesanal Guna', image: MolaGuna, price: 30, quantity: 15 },
 ]
 
 export function MyStore() {

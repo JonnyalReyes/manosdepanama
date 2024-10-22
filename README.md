@@ -1,11 +1,15 @@
 Manos de Panamá - Plataforma de Ecommerce para Artesanos
+
 Descripción del Proyecto
+
 Manos de Panamá es una plataforma de comercio electrónico diseñada para promover y apoyar a los artesanos, artistas y productores de productos hechos a mano en Panamá. Nuestro objetivo es crear un espacio donde estos creadores puedan vender libremente sus productos culturales y tradicionales, facilitando la conexión directa con los compradores interesados en adquirir piezas únicas que reflejan la rica herencia cultural de Panamá.
 
 Visión
+
 Queremos ser la plataforma líder de ecommerce en Panamá dedicada a la promoción de las tradiciones y artesanías locales, contribuyendo al desarrollo económico de los productores locales y preservando la identidad cultural de nuestro país.
 
 Misión
+
 Manos de Panamá tiene como misión empoderar a los productores panameños ofreciéndoles una plataforma que les permita exhibir y vender sus productos con facilidad, sin intermediarios y con total libertad. Asimismo, buscamos ofrecer a los compradores una experiencia de compra segura, fácil y directa, donde puedan acceder a una amplia variedad de productos culturales y artesanales de calidad.
 
 Funcionalidades Principales

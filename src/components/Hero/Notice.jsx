@@ -12,7 +12,7 @@ const Notice = () => {
       {isNotice && (
         <div className="relative bg-sky-100 p-3 text-center">
           <span className="text-sm">
-            Enjoy <b>₹200/- Off</b> on your first purchase.T&C apply
+            Disfruta de <b>20% Off</b> En tu Primera compra
           </span>
           <span className="absolute right-4">
             <RxCross2

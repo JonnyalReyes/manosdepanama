@@ -9,7 +9,7 @@ const CheckoutForm = () => {
     setUserData((prevInput) => ({
       ...prevInput,
       [name]: value,
-      orderStatus: "successful",
+      orderStatus: "Exitoso",
     }));
   };
 
@@ -17,7 +17,7 @@ const CheckoutForm = () => {
     event.preventDefault();
   };
 
-  const isFormField = userData.orderStatus == "successful";
+  const isFormField = userData.orderStatus == "Exitoso";
 
   return (
     <form
@@ -26,39 +26,19 @@ const CheckoutForm = () => {
     >
       <div>
         <section>
-          <h2 className="text-lg font-medium text-gray-900">
-            Contact information
-          </h2>
-          <div className="mt-6">
-            <label
-              htmlFor="email"
-              className="text-sm font-normal text-gray-700"
-            >
-              Email address
-            </label>
-            <div className="ku">
-              <input
-                type="email"
-                id="email"
-                name="email"
-                autoComplete="email"
-                className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                onChange={() => {
-                  inputChangeHandler(event);
-                }}
-              />
-            </div>
-          </div>
+          <h1 className="text-lg font-medium text-gray-900">
+            <b>Información del Contacto</b>
+          </h1>
         </section>
         <section className="mt-10">
-          <h2 className="text-lg font-medium text-gray-900">Payment details</h2>
+          <h2 className="text-lg font-medium text-gray-900">Detalles del Pago</h2>
           <div className="grid grid-cols-4 gap-x-4 gap-y-6">
             <div className="col-span-4 mt-6">
               <label
                 htmlFor="name"
                 className="text-sm font-normal text-gray-700"
               >
-                Name on card
+                Nombre
               </label>
               <div className="mt-1">
                 <input
@@ -78,7 +58,7 @@ const CheckoutForm = () => {
                 htmlFor="cardNumber"
                 className="text-sm font-medium text-gray-700"
               >
-                Card number
+                Numero de Tarjeta
               </label>
               <div>
                 <input
@@ -98,7 +78,7 @@ const CheckoutForm = () => {
                 htmlFor="expirationDate"
                 className="text-sm font-medium text-gray-700"
               >
-                Expiration date (MM/YY)
+                Fecha de Expiración (MM/YY)
               </label>
               <div>
                 <input
@@ -137,34 +117,15 @@ const CheckoutForm = () => {
         </section>
         <section className="mt-10">
           <h2 className="text-lg font-medium text-gray-900">
-            Shipping and Billing Address
+          Dirección de envío y facturación
           </h2>
           <div className="mt-6 grid grid-cols-3 gap-x-4 gap-y-6">
-            <div className="col-span-3">
-              <label
-                htmlFor="company"
-                className="text-sm font-medium text-gray-700"
-              >
-                Company
-              </label>
-              <div>
-                <input
-                  type="text"
-                  id="company"
-                  name="company"
-                  className="w-full appearance-none rounded-md border border-gray-300 px-3 py-2 text-sm shadow-sm"
-                  onChange={() => {
-                    inputChangeHandler(event);
-                  }}
-                />
-              </div>
-            </div>
             <div className="col-span-3">
               <label
                 htmlFor="address"
                 className="text-sm font-medium text-gray-700"
               >
-                Address
+                Dirrección 
               </label>
               <div>
                 <input
@@ -184,7 +145,7 @@ const CheckoutForm = () => {
                 htmlFor="apartment"
                 className="text-sm font-medium text-gray-700"
               >
-                Apartment, suite, etc.
+                Apartamento, casa, etc
               </label>
               <div>
                 <input
@@ -203,7 +164,7 @@ const CheckoutForm = () => {
                 htmlFor="city"
                 className="text-sm font-medium text-gray-700"
               >
-                City
+                Ciudad
               </label>
               <div>
                 <input
@@ -223,7 +184,7 @@ const CheckoutForm = () => {
                 htmlFor="region"
                 className="text-sm font-medium text-gray-700"
               >
-                State / Province
+                Provincia
               </label>
               <div className="col-span-3 md:col-span-1">
                 <input
@@ -243,7 +204,7 @@ const CheckoutForm = () => {
                 htmlFor="postalCode"
                 className="text-sm font-medium text-gray-700"
               >
-                Postal code
+                Zip
               </label>
               <div>
                 <input
@@ -262,7 +223,7 @@ const CheckoutForm = () => {
         </section>
         <div className="mt-10 flex items-center justify-between gap-6  border-t pt-6">
           <p className="text-sm text-gray-500">
-            You won't be charged until the next step.
+            No se le cobrará hasta el siguiente paso.
           </p>
           <a
             type="submit"
@@ -272,7 +233,7 @@ const CheckoutForm = () => {
               localStorage.setItem("userData", JSON.stringify(userData));
             }}
           >
-            Continue
+            Continuar
           </a>
         </div>
       </div>

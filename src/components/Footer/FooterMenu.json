@@ -1,10 +1,10 @@
 [
   {
     "id": 1,
-    "name": "SUPPORT",
+    "name": "SOPORTE",
     "subNames": [
       {
-        "name": "Contact our Stores",
+        "name": "Contactanos",
         "url": "#"
       },
       {
@@ -15,7 +15,7 @@
   },
   {
     "id": 2,
-    "name": "OUR SERVICES",
+    "name": "NUESTROS SERVICIOS",
     "subNames": [
       {
         "name": "Decathlon for Schools",
@@ -44,25 +44,10 @@
     "name": "ABOUT US",
     "subNames": [
       {
-        "name": "Who we are",
-        "url": "#"
-      },
-      {
-        "name": "Decathlon CSR",
-        "url": "#"
-      },
-      {
-        "name": "Careers",
-        "url": "#"
-      },
-      {
-        "name": "Newsroom",
-        "url": "#"
-      },
-      {
-        "name": "Made In India",
+        "name": "Quienes Somos",
         "url": "#"
       }
+
     ]
   },
   {
@@ -70,15 +55,15 @@
     "name": "LEGAL",
     "subNames": [
       {
-        "name": "Return Policy",
+        "name": "Politica de devoluciones",
         "url": "#"
       },
       {
-        "name": "Terms and Conditions",
+        "name": "Terminos y conficiones",
         "url": "#"
       },
       {
-        "name": "Privacy Policy",
+        "name": "Politica de Privacidad",
         "url": "#"
       }
     ]

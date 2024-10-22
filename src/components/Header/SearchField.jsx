@@ -78,16 +78,16 @@ const SearchField = () => {
               className="flex font-extrabold text-gray-400"
               onClick={() => inputRef.current.focus()}
             >
-              <span className="mr-1 font-normal">Search for</span>
+              <span className="mr-1 font-normal">Buscar por</span>
               <Typewriter
                 options={{
                   strings: [
-                    "Surfing Shorts",
-                    "Carrom Boards",
-                    "Table Tennis",
-                    "Skating",
-                    "Basketball",
-                    "Jackets",
+                    "Artesanias",
+                    "Vestimentas",
+                    "Ceramicas",
+                    "Accesorios",
+                    "Esculturas",
+                    "Arte",
                   ],
                   autoStart: true,
                   loop: true,

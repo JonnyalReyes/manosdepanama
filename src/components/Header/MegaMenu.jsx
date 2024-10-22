@@ -86,30 +86,6 @@ const MegaMenu = ({ openProduct }) => {
                 </ul>
               )}
             </div>
-            <div className="relative mt-10 w-1/3 border-l-2 border-r-2 border-t-2 border-primary">
-              <div className="absolute -top-4 left-1/2 -translate-x-1/2 transform bg-sky-700 px-2 py-1 text-white">
-                SALE
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <span className="my-10 block text-xl font-bold capitalize text-sky-700">
-                  30% off on &#8201;
-                  {activeCategory}
-                </span>
-                <div className="bg-transparent">
-                  <img
-                    src={firstItem}
-                    alt="on-sale-product"
-                    className="aspect-square h-60 w-60 mix-blend-multiply"
-                  />
-                </div>
-                <Link
-                  to="/products/"
-                  className="mt-10 w-full bg-sky-700 py-4 text-center font-semibold uppercase text-white"
-                >
-                  explore more
-                </Link>
-              </div>
-            </div>
           </div>
         </div>
       </div>

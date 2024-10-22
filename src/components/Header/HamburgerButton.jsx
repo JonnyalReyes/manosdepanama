@@ -18,7 +18,7 @@ const HamburgerButton = ({ desktop, handler }) => {
       </div>
       {desktop && (
         <span className="text-16 ml-4 hidden text-left uppercase leading-5 text-white lg:block">
-          all <br /> sports
+          <br />
         </span>
       )}
     </button>

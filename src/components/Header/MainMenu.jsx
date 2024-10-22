@@ -26,7 +26,7 @@ const MainMenu = ({
           className="relative flex flex-col items-center gap-1"
         >
           <MdOutlineShoppingCart />
-          {label && <span className="text-sm">cart</span>}
+          {label && <span className="text-sm">carrito</span>}
           <div className="absolute bottom-8 left-3 flex h-[15px] w-[15px] items-center justify-center rounded-full bg-yellow-800 text-[8px]">
             {TotalQuantity}
           </div>

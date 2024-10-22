@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaRegUser, FaRegHeart } from "react-icons/fa";
+import { FaRegUser, FaRegHeart, FaInfoCircle } from "react-icons/fa";
 import { FaRegMessage, FaRegFloppyDisk } from "react-icons/fa6";
 import { useNavigate } from "react-router-dom";
 
 import "./Header.css";
-import BrandLogo from "../../assets/logo.svg";
+import Manos_de_Panama from "../../assets/Manos_de_Panama.svg";
 import MegaMenu from "./MegaMenu";
 import HamburgerButton from "./HamburgerButton";
 import SearchField from "./SearchField";
@@ -25,26 +25,20 @@ const Header = () => {
   const Navigation = [
     {
       id: 1,
-      menu: "Sign In",
+      menu: "Inicio de sesión",
       icon: <FaRegUser />,
       url: "/sign-in",
     },
     {
       id: 2,
-      menu: "My Store",
-      icon: <FaRegFloppyDisk />,
+      menu: "Blog",
+      icon: <FaRegMessage />,
       url: "/products",
     },
     {
-      id: 3,
-      menu: "Support",
-      icon: <FaRegMessage />,
-      url: "/support",
-    },
-    {
       id: 4,
-      menu: "Wishlist",
-      icon: <FaRegHeart />,
+      menu: "Sobre nosotros",
+      icon: <FaInfoCircle />,
       url: "/wishlist",
     },
   ];
@@ -89,9 +83,9 @@ const Header = () => {
                 <HamburgerButton desktop={true} handler={menuHandler} />
                 <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
                   <img
-                    className="cursor-pointer border border-white lg:w-36"
-                    src={BrandLogo}
-                    alt="Dekaathlon"
+                    className="cursor-pointer border border-white lg:w-24"
+                    src={Manos_de_Panama}
+                    alt="manosdepanama"
                   />
                 </Link>
               </div>
@@ -118,9 +112,9 @@ const Header = () => {
                   <HamburgerButton handler={offCanvasHandler} />
                   <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
                     <img
-                      src={BrandLogo}
+                      src={Manos_de_Panama}
                       className="w-28 cursor-pointer border border-white"
-                      alt="Dekaathlon"
+                      alt="manosdepanama"
                     />
                   </Link>
                 </div>

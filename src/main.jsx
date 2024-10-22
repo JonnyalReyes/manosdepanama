@@ -11,6 +11,7 @@ import SingleProduct from "./pages/SingleProduct.jsx";
 import NotFoundPage from "./pages/NotFoundPage.jsx";
 import Checkout from "./pages/Checkout.jsx";
 import Confirmation from "./pages/Confirmation.jsx";
+import { Loggin } from "./components/Loggin/Loggin";  
 
 import { DatabaseProvider } from "./contexts/DatabaseContext.jsx";
 import { HeaderProvider } from "./contexts/HeaderContext.jsx";
@@ -39,6 +40,10 @@ const routes = createBrowserRouter([
     path: "/confirmation",
     element: <Confirmation />,
   },
+  {
+    path: "/login", 
+    element: <Loggin />,  
+  },
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -52,5 +57,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </CheckoutProvider>
       </CartProvider>
     </DatabaseProvider>
-  </React.StrictMode>,
+  </React.StrictMode>
 );

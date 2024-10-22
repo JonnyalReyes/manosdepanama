@@ -112,7 +112,7 @@ const Header = () => {
                 />
               </div>
             </div>
-            {/* Mobile Header */}
+            {/* Mobile eader */}
             <div className="container mx-auto md:hidden">
               <div className="mb-5 flex justify-between">
                 <div className="flex items-center">

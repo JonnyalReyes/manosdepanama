@@ -46,7 +46,7 @@ export function Loggin() {
                     type="text"
                     required
                     className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-10 sm:text-sm border-gray-300 rounded-md"
-                    placeholder="Juan Pérez"
+                    placeholder="Gabriel Ruíz"
                   />
                 </div>
               </div>

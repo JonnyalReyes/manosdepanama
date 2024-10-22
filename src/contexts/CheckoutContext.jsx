@@ -13,7 +13,7 @@ export const CheckoutProvider = ({ children }) => {
     cardNumber: "",
     expirationDate: "",
     cvc: "",
-    company: "",
+    company: "", 
     address: "",
     apartment: "",
     city: "",

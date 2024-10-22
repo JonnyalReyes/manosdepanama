@@ -65,7 +65,7 @@ const Products = () => {
     return (
       <Layout>
         <div className="container mx-auto px-4 py-8 sm:px-6 lg:px-8">
-          <h1>Shop Page</h1>
+          <h1>Pagina de Compras</h1>
           <ShopSort sortHandler={sortHandler} />
 
           <div className="flex flex-wrap">

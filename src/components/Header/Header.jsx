@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { FaRegUser, FaRegHeart, FaInfoCircle } from "react-icons/fa";
+import { FaRegUser, FaRegHeart } from "react-icons/fa";
 import { FaRegMessage, FaRegFloppyDisk } from "react-icons/fa6";
+import { PiStorefront } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
-
+import { HiOutlineUserGroup } from "react-icons/hi";
 import "./Header.css";
-import Manos_de_Panama from "../../assets/Manos_de_Panama.svg";
+import BrandLogo from "../../assets/logo.svg";
+import { Loggin } from '../Loggin/Loggin';
 import MegaMenu from "./MegaMenu";
 import HamburgerButton from "./HamburgerButton";
 import SearchField from "./SearchField";
@@ -17,6 +19,7 @@ import { useHeader } from "../../contexts/HeaderContext";
 import { useCart } from "../../contexts/CartContext";
 
 const Header = () => {
+  
   const { itemsInCart, calculateQuantity, slideInCart, setSlideInCart } =
     useCart();
   const navigate = useNavigate();
@@ -25,21 +28,27 @@ const Header = () => {
   const Navigation = [
     {
       id: 1,
-      menu: "Inicio de sesión",
+      menu: "Sign In",
       icon: <FaRegUser />,
-      url: "/sign-in",
+      url: "/Login",
     },
     {
       id: 2,
-      menu: "Blog",
+      menu: "Mi Tienda",
+      icon: <PiStorefront />,
+      url: "/MyStore",
+    },
+    {
+      id: 3,
+      menu: "Blogs",
       icon: <FaRegMessage />,
-      url: "/products",
+      url: "/BlogList",
     },
     {
       id: 4,
-      menu: "Sobre nosotros",
-      icon: <FaInfoCircle />,
-      url: "/wishlist",
+      menu: "About Us",
+      icon: <HiOutlineUserGroup />,
+      url: "/sobre",
     },
   ];
 
@@ -76,16 +85,16 @@ const Header = () => {
           setSlideInCart={setSlideInCart}
           slideInCart={slideInCart}
         />
-        <div className="bg-primary px-4 py-3 xl:py-4 2xl:px-16">
+        <div className="bg-gray-500 px-4 py-3 xl:py-4 2xl:px-16">
           <div className="container mx-auto">
             <div className="hidden flex-col items-center justify-between gap-6 md:flex lg:flex-row">
               <div className="flex w-full justify-between lg:w-auto lg:justify-normal">
                 <HamburgerButton desktop={true} handler={menuHandler} />
                 <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
                   <img
-                    className="cursor-pointer border border-white lg:w-24"
-                    src={Manos_de_Panama}
-                    alt="manosdepanama"
+                    className="cursor-pointer border border-white lg:w-36"
+                    src={BrandLogo}
+                    alt="Dekaathlon"
                   />
                 </Link>
               </div>
@@ -105,26 +114,25 @@ const Header = () => {
                 />
               </div>
             </div>
-            {/* Mobile Header */}
+            {/* Mobile eader */}
             <div className="container mx-auto md:hidden">
               <div className="mb-5 flex justify-between">
                 <div className="flex items-center">
                   <HamburgerButton handler={offCanvasHandler} />
                   <Link to="/" className="ml-3 cursor-default md:ml-6 lg:ml-12">
                     <img
-                      src={Manos_de_Panama}
+                      src={BrandLogo}
                       className="w-28 cursor-pointer border border-white"
-                      alt="manosdepanama"
+                      alt="Dekaathlon"
                     />
                   </Link>
                 </div>
-                <div className="flex items-center gap-3 ">
-                  <a
-                    href="/sign-in"
+                <div className="flex items-center gap-1 ">
+                  <Link to="/Login"
                     className="flex h-7 w-16 items-center justify-center rounded-md border border-white text-xs uppercase text-white"
-                  >
-                    Sign In
-                  </a>
+                    >
+                      Sign In
+                  </Link>
                 </div>
               </div>
               <div className="flex items-center">

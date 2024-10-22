@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "title": "Sombrero Pintao",
+        "price": 49.99,
+        "description": "Tradicional sombrero panameño hecho a mano con fibras naturales. Ideal para protegerse del sol y como accesorio cultural.",
+        "category": "accessories",
+        "image": "https://artesanosdepanama.com/cdn/shop/files/sombreroportarjeta_800x.png?v=1697218987",
+        "rating": {
+            "rate": 4.8,
+            "count": 150
+        }
+    },
+    {
+        "id": 2,
+        "title": "Mola Kuna",
+        "price": 25.99,
+        "description": "Arte textil hecho por las mujeres de la comunidad Guna. Las molas son coloridas y detalladas, representando la flora, fauna y cultura de la región.",
+        "category": "art & crafts",
+        "image": "https://i.pinimg.com/originals/74/48/2d/74482d75615903117cfaca886172898d.jpg",
+        "rating": {
+            "rate": 4.9,
+            "count": 200
+        }
+    },
+    {
+        "id": 3,
+        "title": "Pollera Panameña - Accesorios",
+        "price": 15.99,
+        "description": "Juego de peinetas y tembleques para complementar la Pollera Panameña. Hecho a mano con cuentas y perlas.",
+        "category": "accessories",
+        "image": "https://i.pinimg.com/originals/ae/64/85/ae648534e03c76fbb234fb8e54b9e90b.jpg",
+        "rating": {
+            "rate": 4.7,
+            "count": 90
+        }
+    },
+    {
+        "id": 4,
+        "title": "Camiseta Panamá Canal",
+        "price": 19.99,
+        "description": "Camiseta con diseño del Canal de Panamá, con estampado moderno que representa la historia y orgullo del país.",
+        "category": "clothing",
+        "image": "https://ih1.redbubble.net/image.205738588.4855/ssrco,classic_tee,flatlay,101010:01c5ca27c6,front,wide_portrait,750x1000.u4.jpg",
+        "rating": {
+            "rate": 4.3,
+            "count": 120
+        }
+    },
+    {
+        "id": 5,
+        "title": "Sombrero Tipico",
+        "price": 34.50,
+        "description": "Sombrero típico panameño.",
+        "category": "accessories",
+        "image": "https://dalicynmodatipica.com/wp-content/uploads/2021/09/IMG-20210706-WA0003.jpg",
+        "rating": {
+            "rate": 4.5,
+            "count": 80
+        }
+    }
+]

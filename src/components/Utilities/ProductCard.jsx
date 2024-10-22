@@ -69,7 +69,7 @@ const ProductCard = ({ product, className }) => {
                 )
               }
             >
-              Agregar al carrito
+              Añadir a la cesta
             </button>
           </div>
         </div>

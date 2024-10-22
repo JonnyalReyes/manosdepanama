@@ -41,10 +41,6 @@ const Footer = () => {
           <h3 className="mb-5 text-sm font-semibold uppercase text-gray-900">
             Experience Decathlon App on Mobile
           </h3>
-          <div className="flex flex-wrap gap-4 ">
-            <img src={GoogleStore} alt="Google Pay" className="block w-32" />
-            <img src={AppleStore} alt="Apple Store" className="block w-32" />
-          </div>
         </div>
       </div>
 

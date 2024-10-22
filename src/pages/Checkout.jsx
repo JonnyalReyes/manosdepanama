@@ -32,7 +32,7 @@ const Checkout = () => {
             >
               <div className="gx uc cxj">
                 <h2 className="text-lg font-medium text-gray-900">
-                  Order summary
+                  Resumen del pedido
                 </h2>
                 <ul role="list" className="acc acg avz awd axu">
                   {itemsInCart.map((items) => {
@@ -80,11 +80,11 @@ const Checkout = () => {
                     </dd>
                   </div>
                   <div className="mt-5 flex items-center justify-between">
-                    <dt className="text-gray-600">Shipping</dt>
-                    <dd className="font-medium text-gray-600">FREE</dd>
+                    <dt className="text-gray-600">Envio</dt>
+                    <dd className="font-medium text-gray-600">GRATIS</dd>
                   </div>
                   <div className="mt-5 flex items-center justify-between">
-                    <dt className="text-gray-600">Taxes</dt>
+                    <dt className="text-gray-600">Impuestos</dt>
                     <dd className="font-medium text-gray-600">$0</dd>
                   </div>
                   <div className="mt-5 flex items-center justify-between border-t border-gray-200 pt-5 text-base">

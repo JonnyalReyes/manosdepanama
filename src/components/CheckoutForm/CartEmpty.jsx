@@ -19,7 +19,7 @@ function CartEmpty({
             to={linkTo}
             className="inline-block bg-sky-500  px-4 py-2 font-medium text-white transition duration-300 hover:bg-sky-400"
           >
-            Continue
+            Continuar
           </Link>
         </div>
       </div>

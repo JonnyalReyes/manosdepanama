@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaRegUser, FaRegHeart } from "react-icons/fa";
 import { FaRegMessage, FaRegFloppyDisk } from "react-icons/fa6";
+import { PiStorefront } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import BrandLogo from "../../assets/logo.svg";
@@ -32,21 +33,15 @@ const Header = () => {
     },
     {
       id: 2,
-      menu: "My Store",
-      icon: <FaRegFloppyDisk />,
-      url: "/products",
+      menu: "Mi Tienda",
+      icon: <PiStorefront />,
+      url: "/MyStore",
     },
     {
       id: 3,
-      menu: "Support",
+      menu: "Blogs",
       icon: <FaRegMessage />,
-      url: "/support",
-    },
-    {
-      id: 4,
-      menu: "Wishlist",
-      icon: <FaRegHeart />,
-      url: "/wishlist",
+      url: "/BlogList",
     },
   ];
 

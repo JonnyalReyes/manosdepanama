@@ -116,7 +116,7 @@ const SingleProduct = () => {
                 <div className="mb-4 flex flex-col gap-6">
                   <form className="flex items-center gap-10">
                     <p className="mb-2 block font-medium text-gray-900">
-                      Quantity:
+                      Cantidad:
                     </p>
                     <div className="relative flex max-w-[8rem] items-center">
                       <button

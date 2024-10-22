@@ -4,6 +4,7 @@ import { FaRegUser, FaRegHeart } from "react-icons/fa";
 import { FaRegMessage, FaRegFloppyDisk } from "react-icons/fa6";
 import { PiStorefront } from "react-icons/pi";
 import { useNavigate } from "react-router-dom";
+import { HiOutlineUserGroup } from "react-icons/hi";
 import "./Header.css";
 import BrandLogo from "../../assets/logo.svg";
 import { Loggin } from '../Loggin/Loggin';
@@ -42,6 +43,12 @@ const Header = () => {
       menu: "Blogs",
       icon: <FaRegMessage />,
       url: "/BlogList",
+    },
+    {
+      id: 4,
+      menu: "About Us",
+      icon: <HiOutlineUserGroup />,
+      url: "/sobre",
     },
   ];
 

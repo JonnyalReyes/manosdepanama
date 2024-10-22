@@ -5,6 +5,8 @@ import Categories from "./Categories";
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
+import { useCart } from "../../contexts/CartContext";
+import { useCheckout } from "../../contexts/CheckoutContext";
 
 const images = [
   '/placeholder.svg?height=600&width=1200',
@@ -50,10 +52,8 @@ const Hero = () => {
             Descubre la belleza y autenticidad de la artesanía panameña. Cada pieza cuenta una historia, cada compra apoya a un artesano local.
           </p>
           
-            <button className="bg-white text-black py-3 px-8 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:scale-105">
-              Explorar Ahora
-        
-
+            <button  className="bg-white text-black py-3 px-8 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300 ease-in-out transform hover:scale-105">
+            <a href="/shop">Explora Ahora</a>
             </button>
         </div>
       </div>

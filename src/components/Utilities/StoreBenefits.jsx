@@ -8,19 +8,19 @@ import Warranty from "../../assets/Warranty.avif";
 const CTAActions = [
   {
     id: 1,
-    title: "No Cost EMI Available",
+    title: "Compras seguras",
     image: Warranty,
     className: "justify-center",
   },
   {
     id: 2,
-    title: "Easy Returns",
+    title: "Contacto responsable",
     image: ReturnPolicy,
     className: "justify-center",
   },
   {
     id: 3,
-    title: "1 M+ happy Customers",
+    title: "Productos nuevos todos los días",
     image: FreeDelivery,
     className: "justify-center",
   },

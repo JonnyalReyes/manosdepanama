@@ -71,37 +71,6 @@ const Footer = () => {
           <div className="container mx-auto mt-6 border-b border-t px-10 py-10 md:py-4">
             <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-0">
               <div className="flex flex-wrap items-center gap-4">
-                <img src={Warranty} alt="secure" />
-                <div>
-                  <h3 className="font-bold uppercase text-gray-900">
-                    100% Secure <br /> transaction
-                  </h3>
-                  <span className="text-xs font-semibold text-gray-500">
-                    Secure SSL encryption
-                  </span>
-                </div>
-              </div>
-              <div className="inline-flex flex-wrap items-center justify-start gap-3 xl:justify-center 2xl:flex-nowrap">
-                <img src={DebitCard} alt="Debit Card" />
-                <img src={CreditCard} alt="Credit Card" />
-                <img src={UPI} alt="UPI" />
-                <img src={NetBanking} alt="Net Banking" />
-              </div>
-              <div className="flex items-center justify-start xl:justify-center">
-                <a
-                  href="#"
-                  className="border-b border-t border-gray-800 px-4 py-2 xl:border-b-0 xl:border-l xl:border-r xl:border-t-0 xl:px-5"
-                >
-                  Site Map
-                </a>
-              </div>
-              <div className="flex items-center justify-start xl:justify-center">
-                <p className="text-left xl:text-center">
-                  <span className="mr-2">DECATHLON is present in</span>
-                  <button className="mt-3 rounded border border-gray-700 px-4 py-2 text-xs">
-                    46 Countries
-                  </button>
-                </p>
               </div>
             </div>
           </div>
@@ -118,53 +87,15 @@ const Footer = () => {
               <TiSocialYoutube size={34} />
             </div>
           </div>
-          <div>
-            <h3 className="mb-4 text-sm font-bold uppercase text-gray-900">
-              Sport advice for you
-            </h3>
-            <a href="#" className="mb-8 block w-full bg-white p-3 text-center">
-              blog.decathlon.in
-            </a>
-            <h3 className="mb-4 text-sm font-bold uppercase text-gray-900">
-              Explore sports events near you
-            </h3>
-            <a href="#" className="block w-full bg-white p-3 text-center">
-              play.decathlon.in
-            </a>
-          </div>
         </div>
       </div>
       <div className="relative">
         <div className="container mx-auto mt-9">
-          <h3 className="mb-4 text-center font-bold uppercase text-gray-900">
-            Our Purpose
-          </h3>
-          <p className="mb-4 text-center  text-base font-semibold text-sky-700 md:text-lg">
-            <span className="text-lime-500">To Sustainably</span> make the
-            Pleasure and Benefits of Sport accessible to the Many
-          </p>
-          <div className="relative py-10">
-            <img
-              src={Leaf}
-              alt="leaf"
-              className="absolute -top-20 right-0 w-28 object-cover sm:w-auto"
-            />
-            <img
-              src={FooterLogo}
-              alt="dekaathlon logo"
-              className="mx-auto w-3/6"
-            />
-          </div>
           <p className="py-10 text-center text-xs">
             © 2024 Decathlon Sports India Pvt Ltd. All rights reserved.
           </p>
         </div>
       </div>
-      <img
-        src={Stick}
-        alt="stick"
-        className="absolute bottom-0 w-28 object-contain sm:w-auto"
-      />
     </footer>
   );
 };
